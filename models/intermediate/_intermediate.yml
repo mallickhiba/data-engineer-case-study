@@ -12,5 +12,6 @@ models:
         tests:
           - not_null
           - relationships:
-              to: ref('int_owners')
-              field: owner_id
+              arguments:
+                to: ref('int_owners')
+                field: owner_id
