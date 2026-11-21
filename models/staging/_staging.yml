@@ -1,0 +1,21 @@
+version: 2
+models:
+  - name: stg_marina_pms
+    columns:
+      - name: booking_id
+        tests: [unique, not_null]
+      - name: hull_id
+        tests: [not_null]
+  - name: stg_vendor_orders
+    columns:
+      - name: work_order_id
+        tests: [unique, not_null]
+      - name: service_category
+        tests:
+          - accepted_values:
+              arguments:
+                values: ['Engine Maintenance', 'Hull Service', 'Dockage', 'Electrical']
+  - name: stg_stripe_subscriptions
+    columns:
+      - name: sub_id
+        tests: [not_null]
