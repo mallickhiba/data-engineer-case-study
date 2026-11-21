@@ -1,0 +1,16 @@
+version: 2
+models:
+  - name: int_owners
+    columns:
+      - name: owner_id
+        tests: [unique, not_null]
+  - name: int_boats
+    columns:
+      - name: boat_id
+        tests: [unique, not_null]
+      - name: owner_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('int_owners')
+              field: owner_id
