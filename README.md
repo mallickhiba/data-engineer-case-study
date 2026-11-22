@@ -20,5 +20,4 @@ Set up a Snowflake connection (profile `default`), then:
 ```
 dbt build
 ```
-
-This loads the seeds, builds all models, and runs the tests.
+to load the seeds, build all models, and run the tests.
